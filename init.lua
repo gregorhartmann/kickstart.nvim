@@ -178,12 +178,17 @@ require('lazy').setup({
         end,
       })
 
-      vim.keymap.set('n', '<leader>/', function()
-        builtin.current_buffer_fuzzy_find(require('telescope.themes').get_dropdown {
-          winblend = 10,
-          previewer = false,
-        })
-      end, { desc = '[/] Fuzzily search in current buffer' })
+      vim.keymap.set(
+        'n',
+        '<leader>/',
+        function()
+          builtin.current_buffer_fuzzy_find(require('telescope.themes').get_dropdown {
+            winblend = 10,
+            previewer = false,
+          })
+        end,
+        { desc = '[/] Fuzzily search in current buffer' }
+      )
 
       vim.keymap.set(
         'n',
@@ -205,6 +210,7 @@ require('lazy').setup({
     'neovim/nvim-lspconfig',
     dependencies = {
       { 'mason-org/mason.nvim', opts = {} },
+      { 'mason-org/mason-lspconfig.nvim', opts = {} },
       'WhoIsSethDaniel/mason-tool-installer.nvim',
 
       { 'j-hui/fidget.nvim', opts = {} },
@@ -256,8 +262,15 @@ require('lazy').setup({
 
       local capabilities = require('blink.cmp').get_lsp_capabilities()
       local servers = {
-        --clangd = {},
-        --gopls = {},
+        clangd = {},
+        gopls = {},
+        ansiblels = {},
+        bashls = {},
+        docker_compose_language_service = {},
+        docker_language_server = {},
+        gitlab_ci_ls = {},
+        hyprls = {},
+        terraformls = {},
         -- pyright = {},
         -- rust_analyzer = {},
       }
