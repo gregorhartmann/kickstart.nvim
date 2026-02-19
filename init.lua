@@ -3,6 +3,8 @@ vim.g.maplocalleader = ' '
 
 vim.g.have_nerd_font = true
 
+vim.g.editorconfig = false
+
 -- [[ Setting options ]]
 vim.o.number = true
 vim.o.relativenumber = true
@@ -41,7 +43,7 @@ vim.o.scrolloff = 10
 vim.o.confirm = true
 
 vim.o.fileformat = 'unix'
-vim.o.fileformats = 'unix'
+vim.o.fileformats = 'unix,dos'
 
 -- [[ Basic Keymaps ]]
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
