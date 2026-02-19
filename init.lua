@@ -166,6 +166,9 @@ vim.o.scrolloff = 10
 -- See `:help 'confirm'`
 vim.o.confirm = true
 
+vim.o.fileformat = 'unix'
+vim.o.fileformats = 'unix'
+
 -- [[ Basic Keymaps ]]
 --  See `:help vim.keymap.set()`
 
